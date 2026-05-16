@@ -368,7 +368,21 @@
     .strip span { color: var(--muted); font-size: 14px; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .screenshot-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
     .card { padding: 22px; }
+    .screenshot-card { padding: 14px; }
+    .screenshot-card img {
+      width: 100%;
+      aspect-ratio: 9 / 19.5;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+      background: #0b0e17;
+    }
+    .screenshot-card h3 { font-size: 18px; margin: 14px 0 6px; }
+    .screenshot-card p { font-size: 14px; }
     .card h3 { font-size: 20px; margin-bottom: 9px; }
     .card p, .card li { color: var(--muted); font-size: 15px; }
     .card ul, .legal-card ul { margin: 14px 0 0; padding-left: 18px; color: var(--muted); }
@@ -438,6 +452,7 @@
       .section-head p { margin-top: 12px; }
       .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .grid-3, .grid-2, .premium-panel, .legal-grid { grid-template-columns: 1fr; }
+      .screenshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .setup-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 720px) {
@@ -446,7 +461,7 @@
       .nav-actions { margin-left: auto; }
       .primary-link { display: none; }
       .hero h1 { font-size: clamp(40px, 13vw, 62px); }
-      .trust-row, .strip, .setup-list { grid-template-columns: 1fr; }
+      .trust-row, .strip, .setup-list, .screenshot-grid { grid-template-columns: 1fr; }
       .phone-stage { min-height: 520px; }
       .floating-note { right: 4px; bottom: 34px; }
       section { padding: 62px 0; }
@@ -537,6 +552,35 @@
            data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
+
+    <section class="shell" id="screenshots">
+      <div class="section-head">
+        <h2>Real screens from the current build.</h2>
+        <p>These captures show the home surface, app library, and settings flows as they appear in the shipped Android app.</p>
+      </div>
+      <div class="screenshot-grid">
+        <article class="card screenshot-card">
+          <img src="/assets/screenshots/homescreen.jpeg" alt="HyperIsle home screen" loading="lazy">
+          <h3>Home</h3>
+          <p>Main surface with quick access to core controls and app status.</p>
+        </article>
+        <article class="card screenshot-card">
+          <img src="/assets/screenshots/app-library1.jpeg" alt="HyperIsle app library screen" loading="lazy">
+          <h3>App Library</h3>
+          <p>Browse and manage app-specific behavior from the library view.</p>
+        </article>
+        <article class="card screenshot-card">
+          <img src="/assets/screenshots/settings1.jpeg" alt="HyperIsle settings overview" loading="lazy">
+          <h3>Settings</h3>
+          <p>Permissions, behavior, and personalization all stay explicit and reversible.</p>
+        </article>
+        <article class="card screenshot-card">
+          <img src="/assets/screenshots/settings3.jpeg" alt="HyperIsle advanced settings details" loading="lazy">
+          <h3>Advanced controls</h3>
+          <p>Fine-tune privacy, island behavior, and overlay details without leaving the app.</p>
+        </article>
+      </div>
+    </section>
 
     <section class="shell" id="features">
       <div class="section-head">
